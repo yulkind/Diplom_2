@@ -1,0 +1,4 @@
+{'success': True, 'accessToken': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YzMxNDBhOWVkMjgwMDAxYjQ5OWQ1YyIsImlhdCI6MTcyNDA2MDY4MiwiZXhwIjoxNzI0MDYxODgyfQ.RtY4cSj_r7HcTMlJ6FZzo7BFGckDWNxeacAuaZnSwok', 'refreshToken': 'a0fc669661ab13d94bb40b8c09404409c632857d5dcde38c253443a8a19ae702fd5b7f780dc2754e', 'user': {'email': 'cjezvpbv@yandex.ru', 'name': 'jjmlcekiaesz'}}
+{'success': True, 'name': 'Флюоресцентный бургер', 'order': {'number': 6940}}
+200
+{'success': True, 'orders': [], 'total': 109979, 'totalToday': 654}
