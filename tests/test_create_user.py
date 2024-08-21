@@ -1,30 +1,21 @@
 import requests
 import pytest
 import allure
-
 from random_user import RandomUser
 from responses import Responses
 from urls import Urls
 
 
 @allure.description("Создание уникального пользователя")
-def test_create_unique_user():
+def test_create_unique_user(create_and_delete_user):
     user = RandomUser()
-    user_data = {
-        "email": user.email,
-        "password": user.password,
-        "name": user.name
-    }
+    user_data = {"email": user.email, "password": user.password, "name": user.name}
 
     register_response = requests.post(Urls.url_register, data=user_data)
     assert register_response.status_code == 200
     assert register_response.json() == {'success': True, 'user': {'email': user.email, 'name': user.name},
                                         'accessToken': register_response.json().get('accessToken'), 'refreshToken':
                                             register_response.json().get('refreshToken')}
-    delete_response = requests.delete(Urls.url_user,
-                                      headers={'Authorization': register_response.json().get('accessToken')})
-    assert delete_response.status_code == 202
-    assert delete_response.json() == Responses.user_deleted_success
 
 
 @allure.description("Создание пользователя, который уже зарегистрирован")
